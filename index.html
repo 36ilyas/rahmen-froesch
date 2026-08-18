@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rahmen Froesch — Alles im Rahmen · Mönchengladbach</title>
+<meta name="description" content="Rahmen Froesch in Mönchengladbach-Rheydt: Maßrahmen, Passepartouts, Oberflächenveredelung ohne Glas, Spiegel nach Maß und Kunstdrucke. Handwerk aus eigener Werkstatt.">
+<meta name="theme-color" content="#211f1b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://36ilyas.github.io/rahmen-froesch/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rahmen Froesch — Alles im Rahmen">
+<meta property="og:description" content="Wir rahmen von Hand — Maßrahmen, Passepartouts und Veredelung aus eigener Werkstatt in Mönchengladbach-Rheydt.">
+<meta property="og:url" content="https://36ilyas.github.io/rahmen-froesch/">
+<meta property="og:image" content="https://36ilyas.github.io/rahmen-froesch/img/1872.jpg">
+<meta property="og:locale" content="de_DE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf7f1; --ink:#1b1a17; --muted:#4d4740; --soft:#544d45;
+    --accent:#a3623c; --gold:#e0b483; --dark:#211f1b; --line:#e8e1d4; --sand:#f2ece1;
+    --pad: clamp(20px, 5vw, 40px);
+    --serif: "EB Garamond", Georgia, serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%}
+  a{color:var(--ink); text-decoration:none}
+  a:hover{color:var(--accent)}
+  ::selection{background:#f0dfcd}
+  h1,h2,h3,p{margin:0}
+  .wrap{max-width:1180px; margin:0 auto; padding-left:var(--pad); padding-right:var(--pad)}
+  .serif{font-family:var(--serif); font-weight:400}
+  .eyebrow{font-size:11px; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative; min-height:88svh; display:flex; flex-direction:column; background:var(--dark); overflow:hidden}
+  .hero__img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.45; filter:blur(3px) saturate(.9); transform:scale(1.04)}
+  .hero__veil{position:absolute; inset:0; background:linear-gradient(to bottom, rgba(33,31,27,.82) 0%, rgba(33,31,27,.6) 42%, rgba(33,31,27,.94) 100%)}
+
+  .head{position:relative; z-index:2; display:flex; align-items:center; gap:26px; padding:22px var(--pad); flex-wrap:wrap}
+  .brand{font-family:var(--serif); font-size:22px; color:#f7f3ec; letter-spacing:.02em}
+  .nav{display:flex; gap:24px; margin-left:auto; font-size:13px; letter-spacing:.06em; text-transform:uppercase}
+  .nav a{color:#e2dcd2; padding:6px 0}
+  .nav a:hover{color:var(--gold)}
+  .head__tel{font-size:13px; letter-spacing:.04em; color:var(--dark); background:#f0e5d5; padding:12px 18px; border-radius:999px; white-space:nowrap}
+  .head__tel:hover{background:var(--gold); color:var(--dark)}
+
+  .hero__body{position:relative; z-index:2; margin-top:auto; padding:0 var(--pad) 48px; max-width:1080px}
+  .hero__kicker{margin-bottom:20px; font-size:11px; letter-spacing:.3em; text-transform:uppercase; color:var(--gold)}
+  .hero h1{font-family:var(--serif); font-weight:400; font-size:clamp(40px, 8.4vw, 104px); line-height:1; letter-spacing:-.02em; color:var(--bg); text-wrap:balance}
+  .hero h1 em{font-style:italic; color:var(--gold)}
+  .hero__lead{margin-top:24px; max-width:52ch; font-size:clamp(16px, 4vw, 17.5px); line-height:1.7; color:#e0d9cd; text-wrap:pretty}
+  .cta{display:flex; gap:12px; margin-top:32px; flex-wrap:wrap}
+  .btn{display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:15px 28px; font-size:14px; letter-spacing:.03em; border-radius:999px}
+  .btn--light{background:var(--bg); color:var(--dark)}
+  .btn--light:hover{background:var(--gold); color:var(--dark)}
+  .btn--ghost{border:1px solid rgba(250,247,241,.45); color:var(--bg)}
+  .btn--ghost:hover{border-color:var(--bg); color:var(--bg)}
+
+  .hours-bar{position:relative; z-index:2; border-top:1px solid rgba(250,247,241,.18);
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:1px; background:rgba(250,247,241,.18)}
+  .hours-bar > div{padding:20px var(--pad); color:#ddd6ca; font-size:14px; line-height:1.6; background:var(--dark)}
+  .hours-bar b{font-weight:400; color:var(--bg)}
+
+  /* ---------- Sections ---------- */
+  .section{padding-top:clamp(60px, 11vw, 96px)}
+  .split{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:clamp(32px, 5vw, 56px); align-items:center}
+  .lede{margin-top:24px; font-size:16.5px; line-height:1.75; color:var(--muted); max-width:46ch; text-wrap:pretty}
+  h2.title{font-family:var(--serif); font-weight:400; font-size:clamp(30px, 6.4vw, 50px); line-height:1.08; letter-spacing:-.015em}
+
+  .figure{margin:0; background:#fff; padding:14px; border:1px solid var(--line)}
+  .figure > div{aspect-ratio:16/11; background:#efe8dc; overflow:hidden}
+  .figure img{width:100%; height:100%; object-fit:cover; display:block}
+  .portrait{margin:0}
+  .portrait > div{aspect-ratio:4/5; background:#efe8dc; overflow:hidden}
+  .portrait img{width:100%; height:100%; object-fit:cover; display:block}
+
+  .service{display:grid; grid-template-columns:repeat(auto-fit, minmax(320px,1fr)); gap:clamp(28px,4vw,48px); align-items:center; padding:clamp(34px,6vw,52px) 0; border-bottom:1px solid var(--line)}
+  .service:first-of-type{padding-top:0}
+  .service:last-of-type{border-bottom:0; padding-bottom:0}
+  .service .num{margin-bottom:12px; font-family:var(--mono); font-size:12px; letter-spacing:.1em; color:var(--accent)}
+  .service h3{margin-bottom:16px; font-family:var(--serif); font-weight:400; font-size:clamp(24px, 5.6vw, 30px)}
+  .service p.txt{font-size:16px; line-height:1.75; color:var(--muted); max-width:46ch}
+  .facts{display:grid; gap:10px; margin-top:18px; font-size:15px; line-height:1.6; color:var(--muted)}
+  .facts b{font-weight:400; color:var(--ink)}
+  /* Bild bei 02 auf Mobil unter den Text, am Desktop links */
+  .service--flip .figure{order:-1}
+
+  /* ---------- Galerie ---------- */
+  .gallery{margin-top:clamp(60px,11vw,96px); background:var(--dark); padding:clamp(56px,9vw,80px) 0 clamp(60px,9vw,88px)}
+  .gallery__head{display:flex; align-items:baseline; gap:20px; flex-wrap:wrap; padding-bottom:clamp(24px,5vw,40px)}
+  .gallery__head h2{font-family:var(--serif); font-weight:400; font-size:clamp(30px,6.4vw,42px); color:var(--bg); letter-spacing:-.01em}
+  .gallery__head p{font-size:15px; color:#b3aca3; max-width:40ch; line-height:1.6}
+  .rail{display:flex; gap:16px; overflow-x:auto; padding:0 var(--pad) 20px; scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:thin}
+  .rail figure{margin:0; flex:0 0 300px; scroll-snap-align:start}
+  .rail figure > div{aspect-ratio:3/4; background:#2c2924; overflow:hidden}
+  .rail img{width:100%; height:100%; object-fit:cover; display:block}
+  .rail figcaption{margin-top:12px; font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:#a09990}
+  .hint{font-size:12.5px; color:#a09990}
+
+  /* ---------- Besuch ---------- */
+  .contact{display:grid; gap:14px; max-width:420px; margin-top:32px}
+  .contact a{display:flex; justify-content:space-between; align-items:center; gap:16px; min-height:64px; padding:16px 22px; border-radius:2px}
+  .contact a span:first-child{font-size:11px; letter-spacing:.2em; text-transform:uppercase}
+  .contact a span:last-child{font-family:var(--serif); font-size:19px}
+  .contact .primary{background:var(--ink); color:var(--bg)}
+  .contact .primary span:first-child{color:#c9c1b6}
+  .contact .primary:hover{background:var(--accent); color:var(--bg)}
+  .contact .plain{border:1px solid #ddd5c6}
+  .contact .plain span:first-child{color:#7a7267}
+  .contact .plain:hover{border-color:var(--ink)}
+
+  .hours{background:var(--sand); padding:clamp(28px,5vw,40px) clamp(22px,5vw,38px)}
+  .hours h3{margin-bottom:22px; font-family:var(--serif); font-weight:400; font-size:clamp(23px,5vw,27px)}
+  .hours .row{display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #e3dbcc; font-size:16px; color:var(--muted)}
+  .hours .row:last-child{border-bottom:0}
+  .hours .row span:first-child{color:var(--ink)}
+
+  /* ---------- Footer ---------- */
+  footer{border-top:1px solid var(--line); background:var(--sand); margin-top:clamp(40px,7vw,0px)}
+  .foot{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:clamp(28px,5vw,44px); padding-top:clamp(40px,7vw,56px); padding-bottom:28px}
+  .foot p.name{font-family:var(--serif); font-size:23px}
+  .foot p.small{font-size:14px; line-height:1.7; color:var(--soft)}
+  .foot h4{margin:0 0 12px; font-size:10.5px; font-weight:400; letter-spacing:.2em; text-transform:uppercase; color:var(--accent)}
+  .foot .links{display:grid; gap:10px; font-size:13.5px}
+  .foot .links a{color:var(--soft)}
+  .foot .links a:hover{color:var(--ink)}
+  .foot-bar{border-top:1px solid #e3dbcc; padding-top:18px; padding-bottom:40px; display:flex; gap:22px; flex-wrap:wrap; font-size:12.5px; color:var(--soft)}
+  .foot-bar a{color:var(--soft)}
+  .foot-bar .right{margin-left:auto}
+
+  /* ---------- Mobile Aktionsleiste ---------- */
+  .callbar{display:none}
+
+  /* ---------- Breakpoints ---------- */
+  @media (min-width: 721px){
+    .head__tel{order:3}
+  }
+
+  @media (max-width: 900px){
+    .service--flip .figure{order:0}
+  }
+  @media (max-width: 720px){
+    .head{gap:14px; padding:16px var(--pad)}
+    .brand{font-size:20px}
+    .head__tel{margin-left:auto; padding:11px 16px; font-size:12.5px}
+    .nav{order:3; width:100%; margin-left:0; justify-content:space-between; gap:10px; font-size:11.5px; letter-spacing:.04em;
+         border-top:1px solid rgba(250,247,241,.16); padding-top:12px}
+    .hero{min-height:92svh}
+    .hero__body{padding-bottom:36px}
+    .cta .btn{flex:1 1 100%}
+    .hours-bar{grid-template-columns:1fr 1fr}
+    .hours-bar > div{padding:14px var(--pad); font-size:13px}
+    .rail{gap:12px}
+    .rail figure{flex:0 0 76vw}
+    .contact{max-width:none}
+    .foot-bar .right{margin-left:0}
+    /* Platz für die fixierte Aktionsleiste */
+    body{padding-bottom:calc(66px + env(safe-area-inset-bottom))}
+    .callbar{
+      display:grid; grid-template-columns:1fr 1fr; gap:1px;
+      position:fixed; left:0; right:0; bottom:0; z-index:50;
+      background:rgba(27,26,23,.25); backdrop-filter:blur(6px);
+      padding-bottom:env(safe-area-inset-bottom);
+      box-shadow:0 -6px 24px rgba(27,26,23,.14);
+    }
+    .callbar a{display:flex; align-items:center; justify-content:center; gap:8px; min-height:58px;
+      background:var(--ink); color:var(--bg); font-size:14.5px; letter-spacing:.03em}
+    .callbar a.alt{background:var(--sand); color:var(--ink)}
+    .callbar svg{width:17px; height:17px; flex:none}
+  }
+  @media (max-width: 380px){
+    .nav{font-size:10.5px; gap:6px}
+    .brand{font-size:18px}
+    .head__tel{font-size:11.5px; padding:10px 13px; letter-spacing:0}
+    .hero__kicker{letter-spacing:.2em}
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <img class="hero__img" src="img/1872.jpg" alt="Eingerahmtes Bild in der Werkstatt von Gregor Froesch" fetchpriority="high">
+  <div class="hero__veil"></div>
+
+  <header class="head">
+    <a class="brand" href="#top">Rahmen Froesch</a>
+    <a class="head__tel" href="tel:+4921669789901">02166 978 99 01</a>
+    <nav class="nav">
+      <a href="#werkstatt">Werkstatt</a>
+      <a href="#leistungen">Leistungen</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#besuch">Besuch</a>
+    </nav>
+  </header>
+
+  <div class="hero__body" id="top">
+    <p class="hero__kicker">Gregor Froesch · Mönchengladbach-Rheydt</p>
+    <h1>Ihr Bild ist bei uns<br><em>in guten Händen.</em></h1>
+    <p class="hero__lead">Wir rahmen von Hand — mit Zeit für Ihr Motiv, für die Leiste, die dazu passt, und für ein Gespräch dazwischen. Kommen Sie vorbei, bringen Sie Ihr Bild mit.</p>
+    <div class="cta">
+      <a class="btn btn--light" href="#besuch">Besuch planen</a>
+      <a class="btn btn--ghost" href="#galerie">Arbeiten ansehen</a>
+    </div>
+  </div>
+
+  <div class="hours-bar">
+    <div>Di · Do · Fr <b>10 – 18 Uhr</b></div>
+    <div>Mi · Sa <b>10 – 14 Uhr</b></div>
+    <div>Mo &amp; So <b>geschlossen</b></div>
+    <div>Burgfreiheit 25, <b>41199 Mönchengladbach</b></div>
+  </div>
+</section>
+
+<section class="section wrap" id="werkstatt">
+  <div class="split">
+    <figure class="portrait">
+      <div><img src="img/1881.jpg" loading="lazy" alt="Blick in den Laden von Rahmen Froesch"></div>
+    </figure>
+    <div>
+      <p class="eyebrow">Die Werkstatt</p>
+      <h2 class="title" style="margin-top:18px">Beraten wird hier<br>noch am Tisch.</h2>
+      <p class="lede">Ein Familienfoto, ein Aquarell aus dem Urlaub, das Ölbild der Großeltern: Jedes Stück kommt anders zu uns — und geht anders wieder raus. Wir legen Leisten daneben, probieren Passepartouts und sagen auch ehrlich, wenn etwas nicht passt.</p>
+      <p class="lede" style="margin-top:22px">Zuschnitt, Passepartout, Aufziehen, Glas oder Laminat — alles entsteht in unserer eigenen Werkstatt in Mönchengladbach.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="leistungen">
+  <h2 class="title" style="font-size:clamp(28px,6vw,42px); margin-bottom:clamp(30px,6vw,46px)">Was wir für Ihr Bild tun</h2>
+
+  <div class="service">
+    <div>
+      <p class="num">01</p>
+      <h3>Maßrahmen &amp; Passepartouts</h3>
+      <p class="txt">Holz, Aluminium, Wechselrahmen, Galerieschienen — millimetergenau gefertigt. Passepartouts schneiden wir säurefrei und passend zum Motiv, Poster und Fotos ziehen wir sauber auf, Leinwände spannen wir auf Keilrahmen.</p>
+    </div>
+    <figure class="figure">
+      <div><img src="img/1871.jpg" loading="lazy" alt="Maßrahmen aus der Werkstatt"></div>
+    </figure>
+  </div>
+
+  <div class="service service--flip">
+    <figure class="figure">
+      <div><img src="img/1875.jpg" loading="lazy" alt="Kunstdruck mit Oberflächenveredelung"></div>
+    </figure>
+    <div>
+      <p class="num">02</p>
+      <h3>Oberflächenveredelung ohne Glas</h3>
+      <p class="txt">Wir versiegeln Drucke, Poster und Fotos mit pH-neutralen, säurefreien Folien mit UV-Schutz. Danach braucht das Bild kein Glas mehr: kein Bruch, keine Spiegelung, deutlich leichter.</p>
+      <div class="facts">
+        <p><b>Kristall</b> — sandartig strukturiert, harte matte Oberfläche für stark beanspruchte Bilder.</p>
+        <p><b>Leinen</b> — Leinenstrukturprägung, gibt dem Motiv ein wertvolleres, spiegelungsfreies Aussehen.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="service">
+    <div>
+      <p class="num">03</p>
+      <h3>Ölbilder, Spiegel &amp; Kunst</h3>
+      <p class="txt">Vergilbten Firnis nehmen wir schonend ab und firnen das Bild neu. Spiegel fertigen wir nach Maß in Ihrer Wunschleiste. Und wenn noch das Motiv fehlt: Kunstdrucke aus großen Katalogen, Originalkunst, Schmuck und Wohnaccessoires finden Sie bei uns im Laden.</p>
+    </div>
+    <figure class="figure">
+      <div><img src="img/1884.jpg" loading="lazy" alt="Wohnaccessoires und Kunst im Laden"></div>
+    </figure>
+  </div>
+</section>
+
+<section class="gallery" id="galerie">
+  <div class="wrap gallery__head">
+    <h2>Aus dem Laden</h2>
+    <p>Einrahmungen, Kunstdrucke, Originalkunst und kleine Stücke zum Mitnehmen.</p>
+  </div>
+  <div class="rail">
+    <figure>
+      <div><img src="img/1870.jpg" loading="lazy" alt="Maßeinrahmung"></div>
+      <figcaption>Maßeinrahmung</figcaption>
+    </figure>
+    <figure>
+      <div><img src="img/1873.jpg" loading="lazy" alt="Einrahmung mit Passepartout"></div>
+      <figcaption>Passepartout nach Maß</figcaption>
+    </figure>
+    <figure>
+      <div><img src="img/1874.jpg" loading="lazy" alt="Kunstdruck"></div>
+      <figcaption>Kunstdruck</figcaption>
+    </figure>
+    <figure>
+      <div><img src="img/1882.jpg" loading="lazy" alt="Originalkunst"></div>
+      <figcaption>Originalkunst</figcaption>
+    </figure>
+    <figure>
+      <div><img src="img/1877.jpg" loading="lazy" alt="Schmuck und Zubehör"></div>
+      <figcaption>Schmuck &amp; Zubehör</figcaption>
+    </figure>
+    <figure>
+      <div><img src="img/1884.jpg" loading="lazy" alt="Wohnaccessoires"></div>
+      <figcaption>Wohnaccessoires</figcaption>
+    </figure>
+  </div>
+  <p class="wrap hint">seitlich wischen →</p>
+</section>
+
+<section class="section wrap" id="besuch" style="padding-bottom:clamp(56px,9vw,88px)">
+  <div class="split" style="align-items:start">
+    <div>
+      <h2 class="title" style="font-size:clamp(30px,7vw,54px)">Bringen Sie Ihr Bild<br>einfach mit.</h2>
+      <p class="lede" style="max-width:40ch">Rufen Sie kurz vorher an, dann liegen die passenden Leisten schon bereit. Ein Anruf reicht — Termin nicht nötig.</p>
+      <div class="contact">
+        <a class="primary" href="tel:+4921669789901">
+          <span>Werkstatt</span><span>02166 978 99 01</span>
+        </a>
+        <a class="plain" href="tel:+491745461235">
+          <span>Mobil</span><span>0174 546 12 35</span>
+        </a>
+        <a class="plain" href="https://www.google.com/maps/search/?api=1&amp;query=Gregor+Froesch+Burgfreiheit+25+41199+M%C3%B6nchengladbach" target="_blank" rel="noopener">
+          <span>Anfahrt</span><span>Burgfreiheit 25</span>
+        </a>
+      </div>
+    </div>
+    <div class="hours">
+      <h3>Öffnungszeiten</h3>
+      <div class="row"><span>Montag</span><span>geschlossen</span></div>
+      <div class="row"><span>Dienstag</span><span>10:00 – 18:00</span></div>
+      <div class="row"><span>Mittwoch</span><span>10:00 – 14:00</span></div>
+      <div class="row"><span>Donnerstag</span><span>10:00 – 18:00</span></div>
+      <div class="row"><span>Freitag</span><span>10:00 – 18:00</span></div>
+      <div class="row"><span>Samstag</span><span>10:00 – 14:00</span></div>
+      <div class="row"><span>Sonntag</span><span>geschlossen</span></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div>
+      <p class="name">Rahmen Froesch</p>
+      <p class="small" style="margin-top:10px">Gregor Froesch · Alles im Rahmen<br>Burgfreiheit 25, 41199 Mönchengladbach</p>
+    </div>
+    <div>
+      <h4>Impressum</h4>
+      <p class="small" style="font-size:13.5px; line-height:1.8">Inhaber: Gregor Froesch<br>Finanzamt Mönchengladbach-Mitte<br>USt-IdNr.: DE 255526603</p>
+    </div>
+    <div>
+      <h4>Partner</h4>
+      <div class="links">
+        <a href="https://www.nielsen-design.de" target="_blank" rel="noopener">nielsen-design.de</a>
+        <a href="https://www.pgm.de" target="_blank" rel="noopener">pgm.de</a>
+        <a href="https://www.international-graphics.com" target="_blank" rel="noopener">international-graphics.com</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-bar">
+    <span>© 2026 Gregor Froesch</span>
+    <a class="right" href="#besuch">Kontakt</a>
+    <a href="https://www.rahmenfroesch.de/datenschutz.htm" target="_blank" rel="noopener">Datenschutz</a>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a href="tel:+4921669789901">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+    Anrufen
+  </a>
+  <a class="alt" href="https://www.google.com/maps/search/?api=1&amp;query=Gregor+Froesch+Burgfreiheit+25+41199+M%C3%B6nchengladbach" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 13-9 13s-9-7-9-13a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+    Anfahrt
+  </a>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"LocalBusiness",
+  "name":"Rahmen Froesch — Gregor Froesch",
+  "description":"Einrahmungen nach Maß, Passepartouts, Oberflächenveredelung, Spiegel und Kunstdrucke aus eigener Werkstatt.",
+  "image":"https://36ilyas.github.io/rahmen-froesch/img/1872.jpg",
+  "telephone":"+4921669789901",
+  "address":{
+    "@type":"PostalAddress",
+    "streetAddress":"Burgfreiheit 25",
+    "postalCode":"41199",
+    "addressLocality":"Mönchengladbach",
+    "addressCountry":"DE"
+  },
+  "openingHoursSpecification":[
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Thursday","Friday"],"opens":"10:00","closes":"18:00"},
+    {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Saturday"],"opens":"10:00","closes":"14:00"}
+  ]
+}
+</script>
+</body>
+</html>
