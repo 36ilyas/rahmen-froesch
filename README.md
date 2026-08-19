@@ -16,7 +16,7 @@ einen Satz und einen Button — alles andere ist nach unten gewandert.
   schließt per X, per Escape, beim Klick auf einen Link und beim Wechsel auf Desktop-Breite
 - Telefonnummer steht auf dem Handy im Menü, ab 721 px als Pille in der Kopfzeile
 - keine fixe Aktionsleiste am unteren Rand; Kontaktkarten stehen im Bereich „Besuch"
-- Hero füllt auf dem Handy den Bildschirm (`100svh`), auf dem Desktop `88svh`
+- Hero füllt den Bildschirm (`100svh` — `svh` statt `vh`, damit die Browserleiste keinen Sprung erzeugt)
 - **Öffnungszeiten** sind eine eigene Sektion (`#zeiten`) statt Leiste im Hero plus Kasten im Kontaktbereich
 - flachere Bildausschnitte auf dem Handy (4:3 statt 4:5, 3:2 statt 16:11)
 - Touch-Flächen 52–64 px hoch, Buttons volle Breite
