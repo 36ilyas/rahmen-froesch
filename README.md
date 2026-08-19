@@ -12,8 +12,11 @@ Statische Website für **Rahmen Froesch · Gregor Froesch**, Burgfreiheit 25, 41
 Der erste Bildschirm auf dem Handy zeigt nur noch Logo, Telefonnummer, Überschrift,
 einen Satz und einen Button — alles andere ist nach unten gewandert.
 
-- Navigation erscheint erst ab 721 px (auf dem Handy führt Scrollen durch die Seite)
-- keine fixe Aktionsleiste am unteren Rand; die Telefonnummer steht oben, die Kontaktkarten im Bereich „Besuch"
+- **Burgermenü** auf dem Handy: Vollbild-Overlay mit allen Sektionen, Anruf-Button und Adresse;
+  schließt per X, per Escape, beim Klick auf einen Link und beim Wechsel auf Desktop-Breite
+- Telefonnummer steht auf dem Handy im Menü, ab 721 px als Pille in der Kopfzeile
+- keine fixe Aktionsleiste am unteren Rand; Kontaktkarten stehen im Bereich „Besuch"
+- Hero füllt auf dem Handy den Bildschirm (`100svh`), auf dem Desktop `88svh`
 - **Öffnungszeiten** sind eine eigene Sektion (`#zeiten`) statt Leiste im Hero plus Kasten im Kontaktbereich
 - flachere Bildausschnitte auf dem Handy (4:3 statt 4:5, 3:2 statt 16:11)
 - Touch-Flächen 52–64 px hoch, Buttons volle Breite

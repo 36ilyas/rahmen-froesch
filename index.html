@@ -138,6 +138,10 @@
 
   /* ---------- Mobile Aktionsleiste ---------- */
 
+  /* ---------- Burgermenü (nur Handy) ---------- */
+  .burger{display:none}
+  .menu{display:none}
+
   /* ---------- Breakpoints ---------- */
   @media (min-width: 721px){
     .head__tel{order:3}
@@ -149,9 +153,37 @@
   @media (max-width: 720px){
     .head{gap:14px; padding:16px var(--pad)}
     .brand{font-size:20px}
-    .head__tel{margin-left:auto; padding:11px 16px; font-size:12.5px}
+    .head__tel{display:none}
     .nav{display:none}
-    .hero{min-height:78svh}
+
+    /* Burger-Knopf */
+    .burger{display:inline-flex; align-items:center; justify-content:center; margin-left:auto;
+      width:48px; height:48px; padding:0; border:1px solid rgba(250,247,241,.32); border-radius:999px;
+      background:transparent; color:#f7f3ec; cursor:pointer; -webkit-tap-highlight-color:transparent}
+    .burger svg{width:20px; height:20px}
+
+    /* Vollbild-Menü */
+    .menu{display:flex; flex-direction:column; position:fixed; inset:0; z-index:100; background:var(--dark);
+      padding:16px var(--pad) calc(26px + env(safe-area-inset-bottom));
+      transform:translateY(-100%); visibility:hidden; transition:transform .3s ease, visibility .3s}
+    .menu[data-open="true"]{transform:none; visibility:visible}
+    .menu__top{display:flex; align-items:center; gap:14px; min-height:48px}
+    .menu__top .brand{color:#f7f3ec}
+    .menu__close{margin-left:auto; width:48px; height:48px; display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid rgba(250,247,241,.32); border-radius:999px; background:transparent; color:#f7f3ec; cursor:pointer}
+    .menu__close svg{width:20px; height:20px}
+    .menu__links{display:flex; flex-direction:column; margin-top:clamp(18px,5vw,32px)}
+    .menu__links a{font-family:var(--serif); font-size:clamp(26px,7.5vw,34px); color:#f7f3ec; line-height:1;
+      padding:18px 0; border-bottom:1px solid rgba(250,247,241,.14)}
+    .menu__links a:active{color:var(--gold)}
+    .menu__foot{margin-top:auto; padding-top:26px}
+    .menu__call{display:flex; align-items:center; justify-content:center; gap:10px; min-height:60px;
+      background:var(--bg); color:var(--dark); border-radius:999px; font-size:16px; letter-spacing:.02em}
+    .menu__call svg{width:18px; height:18px}
+    .menu__addr{margin-top:16px; text-align:center; font-size:13.5px; line-height:1.7; color:#a09990}
+    .menu__addr a{color:#d9d2c8; text-decoration:underline; text-underline-offset:3px}
+
+    .hero{min-height:100svh}
     .hero__kicker{display:none}
     .hero__body{padding-bottom:clamp(44px,9vw,60px)}
     .hero__lead{margin-top:20px}
@@ -172,15 +204,37 @@
   }
   @media (max-width: 380px){
     .brand{font-size:18px}
-    .head__tel{font-size:11.5px; padding:10px 13px; letter-spacing:0}
-    .hero__kicker{letter-spacing:.2em}
+    .menu__links a{padding:15px 0}
   }
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto}
+    .menu{transition:none}
   }
 </style>
 </head>
 <body>
+
+<div class="menu" id="menu" data-open="false">
+  <div class="menu__top">
+    <span class="brand">Rahmen Froesch</span>
+    <button class="menu__close" type="button" data-close aria-label="Menü schließen">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="menu__links" aria-label="Hauptmenü">
+    <a href="#werkstatt">Werkstatt</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#besuch">Besuch</a>
+    <a href="#zeiten">Öffnungszeiten</a>
+  </nav>
+  <div class="menu__foot">
+    <a class="menu__call" href="tel:+4921669789901"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> 02166 978 99 01</a>
+    <p class="menu__addr">Burgfreiheit 25, 41199 Mönchengladbach<br>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Gregor+Froesch+Burgfreiheit+25+41199+M%C3%B6nchengladbach" target="_blank" rel="noopener">Route anzeigen</a>
+    </p>
+  </div>
+</div>
 
 <section class="hero">
   <img class="hero__img" src="img/1872.jpg" alt="Eingerahmtes Bild in der Werkstatt von Gregor Froesch" fetchpriority="high">
@@ -189,6 +243,9 @@
   <header class="head">
     <a class="brand" href="#top">Rahmen Froesch</a>
     <a class="head__tel" href="tel:+4921669789901">02166 978 99 01</a>
+    <button class="burger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+    </button>
     <nav class="nav">
       <a href="#werkstatt">Werkstatt</a>
       <a href="#leistungen">Leistungen</a>
@@ -385,6 +442,33 @@
     {"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Saturday"],"opens":"10:00","closes":"14:00"}
   ]
 }
+</script>
+
+<script>
+  (function () {
+    var menu = document.getElementById('menu');
+    var burger = document.querySelector('.burger');
+    if (!menu || !burger) return;
+
+    function setOpen(open) {
+      menu.dataset.open = open ? 'true' : 'false';
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      burger.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+      document.body.style.overflow = open ? 'hidden' : '';
+      if (!open) burger.focus({ preventScroll: true });
+    }
+
+    burger.addEventListener('click', function () { setOpen(menu.dataset.open !== 'true'); });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a') || e.target.closest('[data-close]')) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.dataset.open === 'true') setOpen(false);
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 720 && menu.dataset.open === 'true') setOpen(false);
+    });
+  })();
 </script>
 </body>
 </html>
